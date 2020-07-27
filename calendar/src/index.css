@@ -1,0 +1,140 @@
+* {
+    box-sizing: border-box;
+}
+html {
+    font-size: 16px;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+.header {
+    display: flex;
+    height: 7vh;
+    align-items: center;
+}
+
+.btn {
+    margin: 25px;
+}
+.button-create {
+    margin-left: 70px;
+    height: 40px;
+    width: 100px;
+    border-radius: 15px;
+    outline: none;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+
+.button-today {
+    padding: 10px;
+    font-weight: 700;
+}
+.button-prev {
+    font-weight: bold;
+    margin-right: 7px;
+    padding: 6px;
+    border: none;
+    background-color: white;
+    outline: none;
+}
+.button-next {
+    font-weight: bold;
+    margin-right: 15px;
+    padding: 6px;
+    border: none;
+    background-color: white;
+    outline: none;
+}
+
+.mounth {
+    font-weight: bold;
+    font-size: 22px;
+}
+section {
+    margin-top: 100px;
+    display: flex;
+    width: 7%;
+}
+.list-times {
+    width: 20vw;
+    list-style-type: none;
+    line-height: 3;
+}
+main {
+    display: flex;
+    font-size: 20px;
+}
+article {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.list-item_weeks {
+    list-style-type: none;
+    display: flex;
+    padding-left: 0px;
+}
+.list-item_num {
+    list-style-type: none;
+    display: flex;
+    padding-left: 0px;
+   
+}
+.list-item-weeks_days, .list-item-num_days {
+    margin-left: 180px;
+}
+ .list-item-num_days:first-child{
+    margin-left: 80px;
+}
+.list-item-weeks_days:first-child{
+    margin-left: 80px;
+}
+.list-item-num_days:nth-child(5){
+    margin-left: 185px;
+}
+.list-item-num_days:nth-child(6){
+    margin-left: 190px;
+}
+
+
+.row-list {
+    /* position: relative; */
+    margin-top: 50px;
+    width: 1408px;
+}
+.column-list {
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    top: 250px;
+   
+}
+.column-item_child {
+    border-left: 1px solid rgb(71, 66, 66);
+    height: 1480px;
+    padding-left:200px ;
+} 
+.row-item_child {
+    height: 60px;
+    border-top: 1px solid rgb(71, 66, 66);
+}
+
+.form-coment{
+    width: 450px;
+    height: 450px;
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.4);
+}
+.save-btn{
+    width: 150px;
+    height: 40px;
+    background-color: rgb(43, 151, 223);
+    border-radius: 5%;
+    color: white;
+    font-size: 16px;
+    margin-top: 390px;
+    margin-left: 280px;
+}
