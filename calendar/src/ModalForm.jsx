@@ -3,7 +3,7 @@ import React from 'react';
 const ModalForm = () => {
     return (
         <form className="form-coment">
-        <div className="mark-close">+</div>
+        <button className="mark-close">+</button>
         <h1>Breakfast with friends</h1>
         <hr className="line-coment"/>
         <div>

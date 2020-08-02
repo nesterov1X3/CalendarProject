@@ -1,34 +1,38 @@
 import React from 'react';
+import Hour from './Hour.jsx'
 
 const Day = () => {
     return (
-        <div class="row-list">
-                <div class="row-item_child"></div>
-                <div class="row-item_child"></div>
-                <div class="row-item_child"></div>
-                <div class="row-item_child" ></div>
-                <div class="row-item_child"></div>
-                <div class="row-item_child"></div>
-                <div class="row-item_child"></div>
-                <div class="row-item_child"></div>
-                <div class="row-item_child"></div>
-                <div class="row-item_child"></div>
-                <div class="row-item_child"></div>
-                <div class="row-item_child"></div>
-                <div class="row-item_child"></div>
-                <div class="row-item_child"></div>
-                <div class="row-item_child"></div>
-                <div class="row-item_child"></div>
-                <div class="row-item_child"></div>
-                <div class="row-item_child"></div>
-                <div class="row-item_child"></div>
-                <div class="row-item_child"></div>
-                <div class="row-item_child"></div>
-                <div class="row-item_child"></div>
-                <div class="row-item_child"></div>
-                <div class="row-item_child"></div>
-                <div class="row-item_child"></div>
+        <>
+        <Hour/>
+        <div className="row-list">
+                <div className="row-item_child"></div>
+                <div className="row-item_child"></div>
+                <div className="row-item_child"></div>
+                <div className="row-item_child"></div>
+                <div className="row-item_child"></div>
+                <div className="row-item_child"></div>
+                <div className="row-item_child"></div>
+                <div className="row-item_child"></div>
+                <div className="row-item_child"></div>
+                <div className="row-item_child"></div>
+                <div className="row-item_child"></div>
+                <div className="row-item_child"></div>
+                <div className="row-item_child"></div>
+                <div className="row-item_child"></div>
+                <div className="row-item_child"></div>
+                <div className="row-item_child"></div>
+                <div className="row-item_child"></div>
+                <div className="row-item_child"></div>
+                <div className="row-item_child"></div>
+                <div className="row-item_child"></div>
+                <div className="row-item_child"></div>
+                <div className="row-item_child"></div>
+                <div className="row-item_child"></div>
+                <div className="row-item_child"></div>
+                <div className="row-item_child"></div>
             </div>
+            </>
     );
 };
 

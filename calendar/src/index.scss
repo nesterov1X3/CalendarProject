@@ -61,6 +61,7 @@ section {
     width: 9%;
 }
 .list-times {
+    margin-top: 80px;
     width: 20vw;
     list-style-type: none;
     line-height: 3;
@@ -74,32 +75,22 @@ article {
     font-weight: bold;
 }
 
-.list-item_weeks {
-    list-style-type: none;
-    display: flex;
-    padding-left: 0px;
-}
 .list-item_num {
     list-style-type: none;
-    display: flex;
+    display: inline-block;
     padding-left: 0px;
    
 }
-.list-item-weeks_days, .list-item-num_days {
-    margin-left: 180px;
+
+.list-item-weeks_days {
+    
+    margin-left: 110px;
 }
- .list-item-num_days:first-child{
-    margin-left: 80px;
+
+ .list-item-num_days{
+    margin-left: 135px
 }
-.list-item-weeks_days:first-child{
-    margin-left: 80px;
-}
-.list-item-num_days:nth-child(5){
-    margin-left: 170px;
-}
-.list-item-num_days:nth-child(6){
-    margin-left: 195px;
-}
+
 
 .row-list {
     margin-top: 50px;
@@ -109,17 +100,23 @@ article {
     display: flex;
     flex-direction: row;
     position: absolute;
-    top: 250px;
+    top: 200px;
    
 }
 .column-item_child {
     border-left: 1px solid rgb(71, 66, 66);
     height: 1480px;
-    padding-left:200px ;
+    padding-left:205px ;
 } 
 .row-item_child {
     height: 60px;
     border-top: 1px solid rgb(71, 66, 66);
+}
+.hour-item{
+    // border-top: 1px solid rgb(71, 66, 66);
+    // border-left: 1px solid rgb(71, 66, 66);
+//     height: 60px;
+//     width: 200px;
 }
 
 .form-coment{
@@ -129,10 +126,13 @@ article {
 }
 .mark-close{
     margin-top: 5px;
-    margin-left: 420px;
+    margin-left: 415px;
     font-weight: bold;
     font-size: 25px;
     transform: rotate(45deg);
+    border: none;
+    outline: none;
+    background-color: white;
 }
 .save-btn{
     width: 150px;
@@ -168,4 +168,7 @@ h1{
 .clock{
     margin-left: 40px;
     margin-top: 100px;
+}
+.fa{
+    font-size: 30px;
 }

@@ -1,15 +1,17 @@
 import React from 'react';
 
+
+
 const Week = () => {
     return(
-        <div class="column-list">
-                <div class="column-item_child"></div>
-                <div class="column-item_child"></div>
-                <div class="column-item_child"></div>
-                <div class="column-item_child"></div>
-                <div class="column-item_child"></div>
-                <div class="column-item_child"></div>
-                <div class="column-item_child"></div>
+        <div className="column-list">
+                <div className="column-item_child"></div>
+                <div className="column-item_child"></div>
+                <div className="column-item_child"></div>
+                <div className="column-item_child"></div>
+                <div className="column-item_child"></div>
+                <div className="column-item_child"></div>
+                <div className="column-item_child"></div>
             </div> 
     );
 };
