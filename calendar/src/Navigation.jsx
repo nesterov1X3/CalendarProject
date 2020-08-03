@@ -1,6 +1,7 @@
 import React from 'react';
 import moment from 'moment';
 import Header from './Header.jsx';
+import Week from './Week.jsx'
 
 
 class Navigation extends React.Component {
@@ -8,15 +9,15 @@ class Navigation extends React.Component {
     state = {
         today: moment().week('week'),
     }
-    
+
     goNext = () => {
         this.setState({
-            today: this.state.today.add(1,'days')
+            today: this.state.today.add(1, 'days')
         })
     }
     goPrev = () => {
         this.setState({
-            today: this.state.today.add(-1,'days')
+            today: this.state.today.add(-1, 'days')
         })
     }
     currentWeek = () => {
@@ -25,34 +26,45 @@ class Navigation extends React.Component {
         })
     }
 
+ 
+ 
 
 
     render() {
         let today = this.state.today;
+        
         let weekStart = today.clone().startOf('isoWeek');
         let days = [];
         for (let i = 0; i <= 6; i++) {
             days.push(moment(weekStart).add(i, 'days').format("DD dddd"));
         }
 
-
-        // const month = moment().month('month')
-        // let monthStart = month.clone().startOf('isoMonth');
-        // console.log(monthStart);
-
         let month = moment(today).format("MMM")
         let nextMonth = moment(today).add(1, 'months').format('MMM')
-        console.log(nextMonth)
-       
+
+
+        let weekEnd = today.clone().endOf('isoWeek');
+        // console.log(weekStart);
+        // console.log(weekEnd);
+
+
+        const firstOfMonth = moment(weekStart).format("MMM")
+        const lastOfMonth = moment(weekEnd).format("MMM")
+
+        // console.log(firstOfMonth);
+        // console.log(lastOfMonth);
+
         return (
             <>
-                <Header 
-                goNext={this.goNext}
-                goPrev={this.goPrev}
-                currentWeek={this.currentWeek}
-                today={this.state.today}
-                month={month}
-                nextMonth={nextMonth}
+                <Header
+                    goNext={this.goNext}
+                    goPrev={this.goPrev}
+                    currentWeek={this.currentWeek}
+                    firstOfMonth={firstOfMonth}
+                    lastOfMonth={lastOfMonth}
+                    // showForm={this.showForm}
+                    // hideForm={this.hideForm}
+                    // isOpen={this.state.isOpen}
                 />
                 {days.map(day => {
                     const date = day.split(' ')[0];
@@ -64,7 +76,8 @@ class Navigation extends React.Component {
                         </ul>
                     )
                 })}
-
+                <Week
+                    days={days} />
             </>
         )
     }

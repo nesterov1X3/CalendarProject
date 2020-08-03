@@ -1,10 +1,13 @@
 import React from 'react';
 
 
+
 const Hour = () => {
-   return (
-     <div className="hour-item"></div>
-     
-   )
+
+    return (
+           <div className="item-cell">
+               
+           </div>
+    )
 }
-export default Hour;
+export default  Hour;

@@ -3,27 +3,25 @@ import React from 'react';
 import Navigation from './Navigation.jsx';
 import Sidebar from './Sidebar.jsx';
 import ModalForm from './ModalForm.jsx';
-import Week from './Week.jsx';
-import Day from './Day.jsx'
 
-const App = () => {
-    return (
-        <>
-            
-            <main>
-                <section>
-                    <Sidebar />
-                </section>
-                <article>
-                    <Navigation />
-                    <Day />
-                    <Week />
-                    {/* <Day/> */}
-                </article>
-            </main>
-            <ModalForm />
-        </>
-    )
+class App extends React.Component {
+  
+    render() {
+        return (
+            <>
+                <main>
+                    <section>
+                        <Sidebar />
+                    </section>
+                    <article>
+                        <Navigation />
+                    </article>
+                    
+                </main>
+                {/* <ModalForm/> */}
+            </>
+        );
+    };
 };
 
 export default App;
