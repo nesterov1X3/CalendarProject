@@ -3,13 +3,15 @@ import React from 'react';
 import Hour from './Hour.jsx'
 
 
-const Day = () => {
+const Day = ({dataId}) => {
     let hours = [];
+    
     for (let i = 0; i <=23; i++) {
-        hours.push(<Hour key={i} />);
+        hours.push(<Hour key={i} dataTime={i}/>)
     }
+
     return (
-        < li className='items' >
+        < li className='items' dataId={dataId.split(' ')[0]} >
             {hours}
         </li >
     )

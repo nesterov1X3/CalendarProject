@@ -3,11 +3,11 @@ import React from 'react';
 import Day from './Day.jsx'
 
 const Week = ({ days }) => {
-
-
+      
     return (
         <>
-            {days.map(day => <Day key={day} />)}
+            {days.map(day => <Day key={day} dataId={day} />)}
+            
         </>
     )
 }

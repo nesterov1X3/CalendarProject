@@ -24,10 +24,10 @@ class Header extends React.Component {
         return (
             <>
                 <header className="header">
-                    
+                    <div>
                     <button onClick={this.showForm} className="button-create btn">Создать</button>
                     <ModalForm onClose={this.hideForm} isOpen={this.state.isOpen} title="some title"/>
-                    
+                    </div>
                     <button onClick={currentWeek} className="button-today btn">Сегодня</button>
                     <button onClick={goPrev} className="button-prev "><i className="fa fa-angle-left" aria-hidden="true"></i></button>
                     <button onClick={goNext} className="button-next "><i className="fa fa-angle-right" aria-hidden="true"></i></button>

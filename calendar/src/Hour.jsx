@@ -2,12 +2,12 @@ import React from 'react';
 
 
 
-const Hour = () => {
+const Hour = ({dataTime}) => {
 
-    return (
-           <div className="item-cell">
-               
-           </div>
-    )
+    return (<div 
+    className="item-cell"
+    dataTime={dataTime}>
+    </div>)
 }
-export default  Hour;
+        
+export default Hour;
