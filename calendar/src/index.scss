@@ -106,7 +106,10 @@ article {
     height: 60px;
     border-top: 1px solid rgb(71, 66, 66);
 }
-
+.clock {
+    margin-left: 40px;
+    margin-top: 100px;
+}
 .mark-close {
     margin-top: 5px;
     margin-left: 415px;
@@ -128,10 +131,11 @@ article {
     margin-left: 280px;
 }
 
-h1 {
+.title-input {
     font-size: 25px;
     font-weight: 200px;
-    margin-left: 140px;
+    margin-left: 120px;
+    border: none;
 }
 .line-coment {
     width: 320px;
@@ -139,24 +143,9 @@ h1 {
     background-color: rgb(54, 54, 150);
     margin-left: 120px;
 }
-.fa-align-left {
-    margin-left: 40px;
-    margin-top: 80px;
-}
 
-.input-coment,
-.input-coment_clock {
-    margin-left: 30px;
-    border: none;
-}
-.clock {
-    margin-left: 40px;
-    margin-top: 100px;
-}
-.fa {
-    font-size: 30px;
-}
 .items {
+    position: relative;
     margin-top: 60px;
     display: inline-block;
     flex-direction: row;
@@ -172,10 +161,8 @@ h1 {
     border: 1px solid #e7e7e7;
 }
 
-
-
 .form-coment {
-    
+   z-index: 1;
     width: 450px;
     height: 450px;
     box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.4);
@@ -183,5 +170,40 @@ h1 {
     top: 50%;
     left: 50%;
     margin-right: -50%;
-    transform: translate(-50%, -50%)
+    transform: translate(-50%, -50%);
 }
+
+.event {
+    position: absolute;
+    padding: 15px;
+    width: 190px;
+    border-radius: 0px;
+    background-color: blue;
+    color: #fff;
+    font-size: 12px;
+}
+
+.event-check {
+    background-color: #5f438f;
+}
+
+.event-of-task {
+    font-weight: 300;
+    padding-top: 10px;
+}
+
+.fa {
+    font-size: 30px;
+}
+.input-coment {
+    
+    margin-top: 90px;
+    margin-left: 40px;
+    border: none;
+}
+.input-coment_clock {
+    margin-top: 63px;
+    margin-left: 40px;
+    border: none;
+}
+

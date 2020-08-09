@@ -2,12 +2,18 @@
 import React from 'react';
 import Day from './Day.jsx'
 
-const Week = ({ days }) => {
-      
+const Week = ({ days, events, weekStart, weekEnd }) => {
     return (
         <>
-            {days.map(day => <Day key={day} dataId={day} />)}
-            
+            {days.map(day => <Day
+             key={day}
+                dataId={day}
+                events={events}
+                weekStart={weekStart}
+                weekEnd={weekEnd}
+                
+                />)}
+
         </>
     )
 }

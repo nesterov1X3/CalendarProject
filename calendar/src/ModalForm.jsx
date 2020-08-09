@@ -1,29 +1,79 @@
 import React from 'react';
+import { render } from 'react-dom';
 
-const ModalForm = ({ isOpen, onClose }) => {
+class ModalForm extends React.Component {
+    constructor(){
+        super()
+        this.state ={
+            title: ' ',
+            description: ' ',
+            date: ' ',
+            finishTime: ' ',
+            startTime: ' ',
+        }
+        
+        this.handleChange = this.handleChange.bind(this);
+    }
+    
+    handleChange(event) {
+        this.setState({ [event.target.name]: event.target.value })
+    }
+
+    render(){
+        const { isOpen, onClose, handleSubmit } = this.props;
+
+
+     
+        
     if (!isOpen) {
         return null;
     }
     return (
 
-        <form className="form-coment">
+        <form className="form-coment" onSubmit={(e) => handleSubmit(this.state, e)}>
             <button onClick={onClose} className="mark-close">+</button>
-            <h1>Breakfast with friends</h1>
+            <input className="title-input"
+                type="text"
+                placeholder="breakfest"
+                name="title"
+                value={this.state.value}
+                onChange={this.handleChange} />
             <hr className="line-coment" />
-            <div>
-                <i className="far fa-clock clock"></i>
-                <input className="input-coment_clock" type="text" placeholder="1 февр 2020 15:30 - 16:30" />
-            </div>
-            <div>
-                <i className="fas fa-align-left"></i>
-                <input className="input-coment" type="text" placeholder="Добавить описание" />
+            <label className="data-time">
+                {/* <i className="far fa-clock clock"></i> */}
+                <input className="input-coment_clock"
+                    type="date"
+                    name="date"
+                    value={this.state.value}
+                    onChange={this.handleChange} />
+                    
+                <input className="input-coment_clock"
+                    type="time"
+                    name="startTime"
+                    value={this.state.value}
+                    onChange={this.handleChange} />
+                <input className="input-coment_clock"
+                    type="time"
+                    name="finishTime"
+                    value={this.state.value}
+                    onChange={this.handleChange} />
+            </label>
+            <label className="description">
+                {/* <i className="rise fas fa-align-left"></i> */}
+                <input className="input-coment"
+                    type="text"
+                    name="description"
+                    placeholder="Добавить описание"
+                    value={this.state.value}
+                    onChange={this.handleChange} />
 
-            </div>
+            </label>
 
-            <button className="save-btn">Сохранить</button>
+            <button className="save-btn" type="submit">Сохранить</button>
         </form>
 
     );
+    }
 };
 
 export default ModalForm;
