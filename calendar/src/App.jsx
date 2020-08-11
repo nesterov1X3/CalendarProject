@@ -4,8 +4,8 @@ import Navigation from './Navigation.jsx';
 import Sidebar from './Sidebar.jsx';
 import Week from './Week.jsx';
 import moment from 'moment';
+import { createTask, fetchEventsList, deleteTask } from './tasksGateway.js';
 
-const baseUrl = 'https://crudcrud.com/api/f330272816444a60bf9720af2c34516c/events';
 
 class App extends React.Component {
     state = {
@@ -16,25 +16,17 @@ class App extends React.Component {
     };
 
     componentDidMount() {
-        this.fetchEventsList()
+        this.fetchTasks()
     }
 
-    fetchEventsList = () => {
-        fetch(baseUrl).then(res => {
-            if (res.ok) {
-                return res.json()
-            }
-        }).then(eventsList => {
-            // const events = eventsList.map(({ _id, ...event }) => ({
-            //     id: _id,
-            //     ...event,
-            // }));
-            this.setState({
-                events: eventsList
-            });
-        });
+    fetchTasks = () => {
+        fetchEventsList()
+            .then(tasksList =>
+                this.setState({
+                    events: tasksList,
+                })
+            );
     }
-
 
 
 
@@ -47,41 +39,17 @@ class App extends React.Component {
             startTime: value.startTime,
             finishTime: value.finishTime,
             date: value.date,
-            id: `${value.date}${value.timeStart}${value.timeFinish}`
+            
         }
-        fetch(baseUrl, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json;charset=utf-8'
-            },
-            body: JSON.stringify(eventsForm),
-        }).then(response => {
-            if (response.ok) {
-                this.fetchEventsList()
-            } else {
-                throw new Error('Failed to create event')
-            }
-        });
-        // this.setState(function(prevState){
-        //     return {events: [...prevState.events, eventsForm]}
-        // });
+        createTask(eventsForm)
+        .then(() => this.fetchTasks());
         this.hideForm()
 
     }
 
 
     handleDeleteEvent = id => {
-        fetch(`${baseUrl}/${id}`, {
-            method: 'DELETE'
-        }).then(response => {
-            if (response.ok) {
-                this.fetchEventsList()
-            } else {
-                throw new Error('Failed to delete event')
-            }
-        });
-        // const updatedEvents = this.state.events.filter(event => event.id !== id);
-        // this.setState({ events: updatedEvents }) 
+        deleteTask(id).then(() => this.fetchTasks())
     }
 
 
