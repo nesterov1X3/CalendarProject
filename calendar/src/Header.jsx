@@ -1,14 +1,14 @@
 import React from 'react';
 import Month from './Month.jsx'
 import ModalForm from './ModalForm.jsx'
-import { render } from 'react-dom';
+
 
 class Header extends React.Component {
     
 
     
     render() {
-        const { goNext, goPrev, currentWeek, firstOfMonth, lastOfMonth, handleSubmit, isOpen, hideForm, showForm } = this.props
+        const { goNext, goPrev, currentWeek, firstOfMonth, lastOfMonth, createEvent, isOpen, hideForm, showForm } = this.props
         return (
             <>
                 <header className="header">
@@ -17,7 +17,7 @@ class Header extends React.Component {
                     <ModalForm onClose={hideForm}
                      isOpen={isOpen}
                      //data for event
-                      handleSubmit={handleSubmit}/>
+                     createEvent={createEvent}/>
                     </div>
                     <button onClick={currentWeek} className="button-today btn">Сегодня</button>
                     <button onClick={goPrev} className="button-prev "><i className="fa fa-angle-left" aria-hidden="true"></i></button>
@@ -30,8 +30,8 @@ class Header extends React.Component {
                 </header>
             </>
 
-        )
-    }
+        );
+    };
 
-}
-export default Header
+};
+export default Header;

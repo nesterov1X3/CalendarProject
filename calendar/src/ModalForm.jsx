@@ -20,7 +20,7 @@ class ModalForm extends React.Component {
     }
 
     render(){
-        const { isOpen, onClose, handleSubmit } = this.props;
+        const { isOpen, onClose, createEvent } = this.props;
 
 
      
@@ -30,11 +30,11 @@ class ModalForm extends React.Component {
     }
     return (
 
-        <form className="form-coment" onSubmit={(e) => handleSubmit(this.state, e)}>
+        <form className="form-coment" onSubmit={(e) => createEvent(this.state, e)}>
             <button onClick={onClose} className="mark-close">+</button>
             <input className="title-input"
                 type="text"
-                placeholder="breakfest"
+                placeholder="drink"
                 name="title"
                 value={this.state.value}
                 onChange={this.handleChange} />
@@ -44,6 +44,7 @@ class ModalForm extends React.Component {
                 <input className="input-coment_clock"
                     type="date"
                     name="date"
+                    id="date"
                     value={this.state.value}
                     onChange={this.handleChange} />
                     
@@ -51,10 +52,12 @@ class ModalForm extends React.Component {
                     type="time"
                     name="startTime"
                     value={this.state.value}
+                    id="startTime"
                     onChange={this.handleChange} />
                 <input className="input-coment_clock"
                     type="time"
                     name="finishTime"
+                    id="finishTime"
                     value={this.state.value}
                     onChange={this.handleChange} />
             </label>

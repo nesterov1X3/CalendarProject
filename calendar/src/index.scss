@@ -162,7 +162,7 @@ article {
 }
 
 .form-coment {
-   z-index: 1;
+    z-index: 1;
     width: 450px;
     height: 450px;
     box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.4);
@@ -196,7 +196,6 @@ article {
     font-size: 30px;
 }
 .input-coment {
-    
     margin-top: 90px;
     margin-left: 40px;
     border: none;
@@ -207,3 +206,22 @@ article {
     border: none;
 }
 
+.button-event-delete {
+    outline: none !important;
+    height: 40px;
+    top: 100%;
+    right: 0;
+    width: 110px;
+    box-shadow: 0 0 9px rgba(0, 0, 0, 0.5);
+    color: grey;
+    background-color: #dfddda;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block;
+    position: absolute;
+}
+
+.button-event-delete:active {
+    border: 1px solid grey;
+}

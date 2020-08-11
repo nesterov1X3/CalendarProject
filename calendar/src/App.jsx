@@ -5,21 +5,40 @@ import Sidebar from './Sidebar.jsx';
 import Week from './Week.jsx';
 import moment from 'moment';
 
+const baseUrl = 'https://crudcrud.com/api/f330272816444a60bf9720af2c34516c/events';
+
 class App extends React.Component {
     state = {
         today: moment().week('week'),
         isOpen: false,
-        events: [
-            { title: 'english', description: 'lesson_1', startTime: '12:30', finishTime: '14:00', date: '2020-08-06' },
-            { title: 'spanish', description: 'lesson_2', startTime: '11:30', finishTime: '16:00', date: '2020-08-08' },
-            { title: 'bulgarian', description: 'lesson_3', startTime: '17:30', finishTime: '19:00', date: '2020-08-16' },
-        ],
-       
+        events: [],
+
     };
 
-   
+    componentDidMount() {
+        this.fetchEventsList()
+    }
 
-    handleSubmit = (value, e) => {
+    fetchEventsList = () => {
+        fetch(baseUrl).then(res => {
+            if (res.ok) {
+                return res.json()
+            }
+        }).then(eventsList => {
+            // const events = eventsList.map(({ _id, ...event }) => ({
+            //     id: _id,
+            //     ...event,
+            // }));
+            this.setState({
+                events: eventsList
+            });
+        });
+    }
+
+
+
+
+    createEvent = (value, e) => {
         e.preventDefault();
 
         const eventsForm = {
@@ -27,14 +46,47 @@ class App extends React.Component {
             description: value.description,
             startTime: value.startTime,
             finishTime: value.finishTime,
-            date: value.date
+            date: value.date,
+            id: `${value.date}${value.timeStart}${value.timeFinish}`
         }
-
-        this.setState(function(prevState){
-            return {events: [...prevState.events, eventsForm]}
+        fetch(baseUrl, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json;charset=utf-8'
+            },
+            body: JSON.stringify(eventsForm),
+        }).then(response => {
+            if (response.ok) {
+                this.fetchEventsList()
+            } else {
+                throw new Error('Failed to create event')
+            }
         });
+        // this.setState(function(prevState){
+        //     return {events: [...prevState.events, eventsForm]}
+        // });
         this.hideForm()
+
     }
+
+
+    handleDeleteEvent = id => {
+        fetch(`${baseUrl}/${id}`, {
+            method: 'DELETE'
+        }).then(response => {
+            if (response.ok) {
+                this.fetchEventsList()
+            } else {
+                throw new Error('Failed to delete event')
+            }
+        });
+        // const updatedEvents = this.state.events.filter(event => event.id !== id);
+        // this.setState({ events: updatedEvents }) 
+    }
+
+
+
+
 
     goNext = () => {
         this.setState({
@@ -83,7 +135,7 @@ class App extends React.Component {
         const lastOfMonth = moment(weekEnd).format("MMM");
 
 
-        
+
 
         return (
             <>
@@ -101,15 +153,18 @@ class App extends React.Component {
                             lastOfMonth={lastOfMonth}
                             events={this.state.events}
                             //data for event
-                            handleSubmit={this.handleSubmit}
+                            createEvent={this.createEvent}
                             //data for form
                             isOpen={this.state.isOpen}
                             hideForm={this.hideForm}
                             showForm={this.showForm}
-                             />
+                        //btnDelete
+
+                        />
                         <Week
                             days={days}
                             events={this.state.events}
+                            handleDelete={this.handleDeleteEvent}
                         />
 
                     </article>

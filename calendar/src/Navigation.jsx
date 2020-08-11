@@ -3,7 +3,7 @@ import Header from './Header.jsx';
 
 
 
-const Navigation = ({ goNext, goPrev, currentWeek, firstOfMonth, lastOfMonth, days, handleSubmit, isOpen, hideForm, showForm }) => {
+const Navigation = ({ goNext, goPrev, currentWeek, firstOfMonth, lastOfMonth, days, createEvent, isOpen, hideForm, showForm }) => {
 
 
     return (
@@ -14,7 +14,7 @@ const Navigation = ({ goNext, goPrev, currentWeek, firstOfMonth, lastOfMonth, da
                 currentWeek={currentWeek}
                 firstOfMonth={firstOfMonth}
                 lastOfMonth={lastOfMonth}
-                handleSubmit={handleSubmit}
+                createEvent={createEvent}
                 isOpen={isOpen}
                 hideForm={hideForm}
                 showForm={showForm}
