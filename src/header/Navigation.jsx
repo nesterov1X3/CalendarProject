@@ -1,11 +1,7 @@
 import React from 'react';
 import Header from './Header.jsx';
 
-
-
 const Navigation = ({ goNext, goPrev, currentWeek, firstOfMonth, lastOfMonth, days, createEvent, isOpen, hideForm, showForm }) => {
-
-
     return (
         <>
             <Header
@@ -24,12 +20,11 @@ const Navigation = ({ goNext, goPrev, currentWeek, firstOfMonth, lastOfMonth, da
                 const weekDay = day.split(' ')[1];
                 return (
                     <ul className='list-item_num' key={day}>
-                        <li className='list-item-weeks_days' >{weekDay}</li>
-                        <li className='list-item-num_days'>{date}</li>
+                        <div className='list-item-weeks_days' >{weekDay}</div>
+                        <div className='list-item-num_days'>{date}</div>
                     </ul>
                 )
             })}
-
         </>
     )
 };

@@ -1,12 +1,12 @@
 import React from 'react';
 // import Header from './Header.jsx';
-import Navigation from './Navigation.jsx';
-import Sidebar from './Sidebar.jsx';
-import Week from './Week.jsx';
+import Navigation from '../header/Navigation.jsx';
+import Sidebar from '../main/Sidebar.jsx';
+import Week from '../header/Week.jsx';
 import moment from 'moment';
-import { createTask, fetchEventsList, deleteTask } from './tasksGateway.js';
+import { createTask, fetchEventsList, deleteTask } from '../event/tasksGateway.js';
 
-//sss
+
 class App extends React.Component {
     state = {
         today: moment().week('week'),

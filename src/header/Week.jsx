@@ -1,6 +1,6 @@
 
 import React from 'react';
-import Day from './Day.jsx'
+import Day from '../main/Day.jsx'
 
 const Week = ({ days, events, weekStart, weekEnd, handleDelete }) => {
     return (
