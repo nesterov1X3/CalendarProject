@@ -6,7 +6,7 @@ import Week from './Week.jsx';
 import moment from 'moment';
 import { createTask, fetchEventsList, deleteTask } from './tasksGateway.js';
 
-
+//sss
 class App extends React.Component {
     state = {
         today: moment().week('week'),
