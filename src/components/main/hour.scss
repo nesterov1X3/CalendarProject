@@ -1,0 +1,9 @@
+.item-cell {
+    align-items: center;
+    min-width: 200px;
+    min-height: 60px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    border: 1px solid #e7e7e7;
+}

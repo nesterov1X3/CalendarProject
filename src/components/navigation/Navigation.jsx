@@ -1,5 +1,6 @@
 import React from 'react';
-import Header from './Header.jsx';
+import Header from '../header/Header.jsx';
+import './navigation.scss'
 
 const Navigation = ({ goNext, goPrev, currentWeek, firstOfMonth, lastOfMonth, days, createEvent, isOpen, hideForm, showForm }) => {
     return (
@@ -19,10 +20,11 @@ const Navigation = ({ goNext, goPrev, currentWeek, firstOfMonth, lastOfMonth, da
                 const date = day.split(' ')[0].split('-')[2]
                 const weekDay = day.split(' ')[1];
                 return (
-                    <ul className='list-item_num' key={day}>
+                    
+                     <ul className='list-item_num' key={day}>
                         <div className='list-item-weeks_days' >{weekDay}</div>
                         <div className='list-item-num_days'>{date}</div>
-                    </ul>
+                     </ul>
                 )
             })}
         </>

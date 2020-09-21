@@ -1,0 +1,42 @@
+.button-event-delete {
+    outline: none !important;
+    height: 40px;
+    top: 100%;
+    right: 0;
+    width: 110px;
+    box-shadow: 0 0 9px rgba(0, 0, 0, 0.5);
+    color: grey;
+    background-color: #dfddda;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block;
+    position: absolute;
+}
+
+.button-event-delete:active {
+    border: 1px solid grey;
+}
+
+.event {
+    position: absolute;
+    padding: 15px;
+    width: 190px;
+    border-radius: 0px;
+    background-color: blue;
+    color: #fff;
+    font-size: 12px;
+}
+
+.event-check {
+    background-color: #5f438f;
+}
+
+.fa {
+    font-size: 30px;
+}
+
+.event-of-task {
+    font-weight: 300;
+    padding-top: 10px;
+}

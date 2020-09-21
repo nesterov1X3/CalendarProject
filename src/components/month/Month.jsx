@@ -1,6 +1,7 @@
 import React from 'react';
 import moment from 'moment'
 import { render } from 'react-dom';
+import './month.scss'
 
 const Month = ({lastOfMonth, firstOfMonth}) => {
 

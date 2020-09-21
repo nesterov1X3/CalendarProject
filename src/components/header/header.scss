@@ -1,0 +1,41 @@
+.header {
+    display: flex;
+    height: 7vh;
+    align-items: center;
+}
+
+.btn {
+    margin: 25px;
+}
+
+.button-create {
+    margin-left: 70px;
+    height: 40px;
+    width: 100px;
+    border-radius: 15px;
+    outline: none;
+    font-size: 15px;
+}
+
+.button-today {
+    padding: 10px;
+    font-weight: 700;
+}
+
+.button-prev {
+    font-weight: bold;
+    margin-right: 7px;
+    padding: 6px;
+    border: none;
+    background-color: white;
+    outline: none;
+}
+
+.button-next {
+    font-weight: bold;
+    margin-right: 15px;
+    padding: 6px;
+    border: none;
+    background-color: white;
+    outline: none;
+}

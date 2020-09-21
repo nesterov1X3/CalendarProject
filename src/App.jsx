@@ -1,10 +1,10 @@
 import React from 'react';
 // import Header from './Header.jsx';
-import Navigation from '../header/Navigation.jsx';
-import Sidebar from '../main/Sidebar.jsx';
-import Week from '../header/Week.jsx';
+import Navigation from './components/navigation/Navigation.jsx';
+import Sidebar from './components/sidebar/Sidebar.jsx';
+import Week from './components/week/Week.jsx';
 import moment from 'moment';
-import { createTask, fetchEventsList, deleteTask } from '../event/tasksGateway.js';
+import { createTask, fetchEventsList, deleteTask } from './components/event/tasksGateway.js';
 
 
 class App extends React.Component {
@@ -41,6 +41,7 @@ class App extends React.Component {
             date: value.date,
             
         }
+        // console.log(startTime)
         createTask(eventsForm)
         .then(() => this.fetchTasks());
         this.hideForm()
@@ -133,6 +134,7 @@ class App extends React.Component {
                             days={days}
                             events={this.state.events}
                             handleDelete={this.handleDeleteEvent}
+                            createEvent={this.createEvent}
                         />
 
                     </article>
