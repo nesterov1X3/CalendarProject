@@ -26,10 +26,7 @@ export class ModalForm extends React.Component {
     render() {
         const { isOpen, onClose, createEvent } = this.props;
 
-        // console.log(this.state.finishTime)
-        // console.log(this.state.startTime)
          const TimeContext = React.createContext(this.state.startTime)
-         console.log(TimeContext)
 
         if (!isOpen) {
             return null;

@@ -16,7 +16,6 @@ class Header extends React.Component {
                         <button onClick={showForm} className="button-create btn">Создать</button>
                         <ModalForm onClose={hideForm}
                             isOpen={isOpen}
-                            //data for event
                             createEvent={createEvent} />
                     </div>
                     <button onClick={currentWeek} className="button-today btn">Сегодня</button>
