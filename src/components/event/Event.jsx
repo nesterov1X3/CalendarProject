@@ -35,7 +35,7 @@ class Event extends React.Component {
             taskData && taskData.map((item) => {
 
                 let myData = item.date.split('-');
-                // console.log(myData);
+            
                 let temp = myData[1];
                 myData[1] = myData[2];
                 myData[2] = temp;
@@ -48,13 +48,11 @@ class Event extends React.Component {
                 let TimeFinishInMinutes = Number(timeFinish[0]) * 60 + Number(timeFinish[1]);
 
 
-                // let height = (TimeFinishInMinutes - TimeStartInMinutes)
 
                 const formatTime = moment().format("YYYYDDMMHHmm");
 
                 const event = `${item.date.replace(/-/g, "")}${item.startTime.replace(':', "")}`;
                 const finish = Number(formatTime) > Number(event);
-                // const timeItem = finish ? 'event event-check' : 'event';
                 let source = `${item.startTime} - ${item.finishTime}`
 
                 return (

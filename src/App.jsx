@@ -1,5 +1,4 @@
 import React from 'react';
-// import Header from './Header.jsx';
 import Navigation from './components/navigation/Navigation.jsx';
 import Sidebar from './components/sidebar/Sidebar.jsx';
 import Week from './components/week/Week.jsx';
@@ -41,7 +40,6 @@ class App extends React.Component {
             date: value.date,
             
         }
-        // console.log(startTime)
         createTask(eventsForm)
         .then(() => this.fetchTasks());
         this.hideForm()
@@ -52,8 +50,6 @@ class App extends React.Component {
     handleDeleteEvent = id => {
         deleteTask(id).then(() => this.fetchTasks())
     }
-
-
 
 
 
@@ -96,8 +92,6 @@ class App extends React.Component {
             days.push(moment(weekStart).add(i, 'days').format("YYYY-MM-DD dddd"));
         }
 
-        // let month = moment(today).format("MMM")
-        // let nextMonth = moment(today).add(1, 'months').format('MMM')
 
         // for month
         const firstOfMonth = moment(weekStart).format("MMM");
@@ -139,7 +133,6 @@ class App extends React.Component {
 
                     </article>
                 </main>
-                {/* <ModalForm/> */}
             </>
         );
     };
